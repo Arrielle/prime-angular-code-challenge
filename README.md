@@ -6,11 +6,14 @@ The Department of Emerging Superhero Knowledge needs an application to help trac
 See the Readme on the attached repo for database and server API information.
 
 ###Routes
-Your application should have two client-side routes: each with a view, template, and controller.
+- [x] Your application should have two client-side routes: each with a view, template, and controller.
 
 ###Client-Side Route 1: Hero Listing & Removal
 
-This should show a list of all heroes in the system, displaying all the information from the entry captured in the view before. Each hero in the listing needs to be able to be deleted from the system in the event of their unfortunate demise. Note that the GET /heroes and DELETE /heroes routes are already built for you.
+This should show a list of all heroes in the system,
+displaying all the information from the entry captured in the view before.
+Each hero in the listing needs to be able to be deleted from the system in the event of their unfortunate demise.
+- [x] Note that the GET /heroes and DELETE /heroes routes are already built for you.
 
 ###Client-Side Route 2: Hero Entry
 
