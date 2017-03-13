@@ -27,12 +27,14 @@
         <th>Persona</th>
         <th>Alias</th>
         <th>Power</th>
+        <th>Edit</th>
         <th>Remove</th>
       </tr>
       <tr ng-repeat="hero in hlc.heroList.list">
-        <td>{{hero.persona}}</td>
-        <td>{{hero.alias}}</td>
+        <td><input ng-model="hero.persona" value = "{{hero.persona}}"/></td>
+        <td><input ng-model="hero.alias" value = "{{hero.alias}}"/>{{hero}}</td>
         <td>{{hero.power_id}}</td>
+        <td><button ng-click="hlc.editHero(hero)">Edit Hero Info</button></td>
         <td><button ng-click="hlc.killHeroes(hero.id)" type="button" name="button">Hero Has Died</button></td>
       </tr>
     </table>

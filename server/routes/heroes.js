@@ -54,23 +54,47 @@ router.delete('/:id', function(req, res) {
     });
 });
 
-router.put('/:id', function(req, res) {
+// router.put('/:id', function(req, res) {
+//   var heroId = req.params.id;
+//   var hero = req.body;
+//   console.log('Updating hero:, ', hero);
+//   pool.connect()
+//     .then(function (client) {
+//       client.query('UPDATE heroes SET persona = $1, alias = $2 WHERE id = $3;',
+//         [hero.persona, hero.alias, heroId])
+//         .then(function (result) {
+//           client.release();
+//           res.send(result.rows);
+//         })
+//         .catch(function (err) {
+//           console.log('error on UPDATE', err);
+//           res.sendStatus(500);
+//         });
+//     });
+// });
+
+router.put('/:id', function(req, res){
   var heroId = req.params.id;
   var hero = req.body;
-  console.log('Updating hero:, ', hero);
-  pool.connect()
-    .then(function (client) {
-      client.query('UPDATE heroes SET persona = $1, alias = $2, power_id = $3 WHERE id = $4',
-        [hero.persona, hero.alias, hero.power_id, hero.id])
-        .then(function (result) {
-          client.release();
-          res.sendStatus(200);
-        })
-        .catch(function (err) {
-          console.log('error on UPDATE', err);
+  console.log('here is hero id', heroId);
+  console.log('here is the hero', hero);
+  pool.connect(function(err, client, done){
+    if(err){
+      console.log('error connecting to database')
+      res.sendStatus(500);
+    } else {
+      client.query('UPDATE heroes SET persona = $1, alias = $2 WHERE id = $3;',
+        [hero.persona, hero.alias, heroId], function(err, result){
+        done();
+        if (err){
+          console.log('error updating the database');
           res.sendStatus(500);
-        });
-    });
+        } else {
+          res.status(200).send(result.rows);;
+        }
+      });
+    }
+  });
 });
 
 

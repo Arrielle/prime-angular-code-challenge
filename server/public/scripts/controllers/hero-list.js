@@ -37,4 +37,16 @@ app.controller('HeroListController', ['$http', function($http){
     });
   }
 
+  self.editHero = function(hero){
+    console.log('hero', hero);
+    console.log('hero.id', hero.id);
+    $http({
+      method: 'PUT',
+      url: '/heroes/' + hero.id,
+      data: hero
+    }).then(function(response){
+       getHeroes();
+    });
+  }
+
 }]);
