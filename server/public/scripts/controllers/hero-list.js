@@ -3,11 +3,15 @@ app.controller('HeroListController', ['$http', function($http){
 
   var self = this;
   self.message = "Heroes List";
-  self.heroList = { list: [] }
+  self.heroList = { list: [] };
+  self.heroPowers = { list: [] };
+
   self.newHero = {};
   getHeroes();
+  getPowers();
 
   function getHeroes(){
+    console.log(self.heroPowers.list);
     $http({
       method: 'GET',
       url: '/heroes'
@@ -15,6 +19,15 @@ app.controller('HeroListController', ['$http', function($http){
       self.heroList.list = response.data;
     });
   }
+
+    function getPowers(){
+      $http({
+        method: 'GET',
+        url: '/powers'
+      }).then(function(response){
+        self.heroPowers.list = response.data;
+      });
+    }
 
   self.killHeroes = function(heroID){
     console.log(heroID);

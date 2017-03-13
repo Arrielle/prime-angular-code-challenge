@@ -27,7 +27,7 @@ Required fields:
 - [x] This power_id must match an id in the super_powers table. Not ideal because the user will have to guess the id for the power, but good enough for now.
 
 ##HARD Mode
-Improve our Listing route to include the ability for the Hero information to be edited (but not the list of powers).
+- [x] Improve our Listing route to include the ability for the Hero information to be edited (but not the list of powers).
 The server has an endpoint for updating a hero but it is untested. Have a look and change what you need.
 
 ##PRO Mode
