@@ -6,12 +6,13 @@
         <th>Persona</th>
         <th>Alias</th>
         <th>Power</th>
+        <th>Remove</th>
       </tr>
       <tr ng-repeat="hero in hlc.heroList.list">
         <td>{{hero.persona}}</td>
         <td>{{hero.alias}}</td>
         <td>{{hero.power_id}}</td>
-        <!-- <td><button ng-click="ec.statusChangeInactive(employee.id)" type="button" name="button">Set Inactive</button></td> -->
+        <td><button ng-click="hlc.killHeroes(hero.id)" type="button" name="button">Hero Has Died</button></td>
       </tr>
     </table>
   </div>

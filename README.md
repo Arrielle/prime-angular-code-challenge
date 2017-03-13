@@ -1,16 +1,16 @@
 #Instructions
 
 ##Your Hero Tracker
-The Department of Emerging Superhero Knowledge needs an application to help track super hero aliases and their powers. They have already built out a Postgres database and a Node/Express server API. It is your job to build them an Angular front end application to connect to this API.
+- [x] The Department of Emerging Superhero Knowledge needs an application to help track super hero aliases and their powers. They have already built out a Postgres database and a Node/Express server API. It is your job to build them an Angular front end application to connect to this API.
 
-See the Readme on the attached repo for database and server API information.
+- [x] See the Readme on the attached repo for database and server API information.
 
 ###Routes
 - [x] Your application should have two client-side routes: each with a view, template, and controller.
 
 ###Client-Side Route 1: Hero Listing & Removal
 
-This should show a list of all heroes in the system,
+- [x] This should show a list of all heroes in the system,
 displaying all the information from the entry captured in the view before.
 Each hero in the listing needs to be able to be deleted from the system in the event of their unfortunate demise.
 - [x] Note that the GET /heroes and DELETE /heroes routes are already built for you.
