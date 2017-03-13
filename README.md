@@ -11,19 +11,21 @@
 ###Client-Side Route 1: Hero Listing & Removal
 
 - [x] This should show a list of all heroes in the system,
-displaying all the information from the entry captured in the view before.
-Each hero in the listing needs to be able to be deleted from the system in the event of their unfortunate demise.
+- [x] displaying all the information from the entry captured in the view before.
+- [x] Each hero in the listing needs to be able to be deleted from the system in the event of their unfortunate demise.
 - [x] Note that the GET /heroes and DELETE /heroes routes are already built for you.
 
 ###Client-Side Route 2: Hero Entry
 
-Build a form to enter new heroes into the system. Note that the server-side POST /heroes route is already built for you.
+- [x] Build a form to enter new heroes into the system. Note that the server-side POST /heroes route is already built for you.
 
 Required fields:
 
-persona : this is the hero's super hero name. It must be unique.
-alias : this is the hero's true name, if known.
-power_id : this is the hero's main super power as chosen from a list of possible powers. The power_id can just be a number input for base mode (pro mode upgrades this to a dropdown select). This power_id must match an id in the super_powers table. Not ideal because the user will have to guess the id for the power, but good enough for now.
+- [x] persona : this is the hero's super hero name. It must be unique.
+- [x] alias : this is the hero's true name, if known.
+- [x] power_id : this is the hero's main super power as chosen from a list of possible powers. The power_id can just be a number input for base mode (pro mode upgrades this to a dropdown select).
+- [x] This power_id must match an id in the super_powers table. Not ideal because the user will have to guess the id for the power, but good enough for now.
+
 ##HARD Mode
 Improve our Listing route to include the ability for the Hero information to be edited (but not the list of powers). The server has an endpoint for updating a hero but it is untested. Have a look and change what you need.
 

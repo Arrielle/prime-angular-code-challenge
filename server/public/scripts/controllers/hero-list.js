@@ -4,6 +4,7 @@ app.controller('HeroListController', ['$http', function($http){
   var self = this;
   self.message = "Heroes List";
   self.heroList = { list: [] }
+  self.newHero = {};
   getHeroes();
 
   function getHeroes(){
@@ -24,4 +25,16 @@ app.controller('HeroListController', ['$http', function($http){
       getHeroes();
     });
   }
+
+  self.addHero = function(newHero){
+    $http({
+      method: 'POST',
+      url: '/heroes/',
+      data: newHero
+    }).then(function(response){
+       getHeroes();
+       self.newHero = {};
+    });
+  }
+
 }]);

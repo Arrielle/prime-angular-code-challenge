@@ -1,6 +1,27 @@
   <h1>{{hlc.message}}</h1>
 
-  <div id = "Heroes">
+  <div id = "addHeroDiv">
+    <form id ="addHeroForm" class="col-md-12">
+      <h3>Add New Hero</h3>
+      <div class="form-group col-xs-6 col-md-4">
+        <label>Persona</label><br>
+        <input ng-model="hlc.newHero.persona" placeholder="persona">
+      </div>
+      <div class="form-group col-xs-6 col-md-4">
+        <label>Alias</label><br>
+        <input ng-model="hlc.newHero.alias" placeholder="Alias">
+      </div>
+      <div class="form-group col-xs-6 col-md-4">
+        <label>Power ID</label><br>
+        <input ng-model="hlc.newHero.power_id" placeholder="Power ID">
+      </div>
+      <div class="form-group col-xs-6 col-md-4">
+        <button id="formButton" ng-click="hlc.addHero(hlc.newHero)">Add Hero</button>
+      </div>
+    </form>
+  </div>
+
+  <div id = "heroesTable">
     <table align = "center">
       <tr>
         <th>Persona</th>
